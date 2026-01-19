@@ -1,0 +1,151 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 全体背景 */
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* アプリ中央寄せ */
+.app {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* カード */
+.container {
+  width: 100%;
+  max-width: 420px;       /* PC は最大幅 */
+  margin: 20px;           /* 画面端余白 */
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* タイトル */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* 入力エリア */
+.input-area {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;  /* スマホでも押しやすい */
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* ボタン */
+button {
+  background: #667eea;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* Todo リスト */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px;
+  border-bottom: 1px solid #eee;
+  word-break: break-word; /* 長い文章も折り返す */
+}
+
+/* Todo テキスト */
+li span {
+  cursor: pointer;
+  flex: 1;
+}
+
+/* 完了 */
+li.done span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* 削除ボタン */
+li button {
+  background: transparent;
+  color: #e53e3e;
+  font-size: 18px;
+}
+
+li button:hover {
+  color: #c53030;
+}
+
+/* スマホ用微調整 */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  li {
+    font-size: 14px;
+    padding: 8px 4px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-area {
+    flex-direction: column; /* 縦並びにして幅いっぱい */
+    gap: 6px;
+  }
+
+  button {
+    width: 100%; /* 入力の下にフル幅ボタン */
+  }
+}
